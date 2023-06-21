@@ -4,6 +4,7 @@
 * root dirで```docker compose up -d```を実施すると起動します
   * サービスが起動してきます。（初回は時間がかかる）
 * ```docker compose ps```コマンドでコンテナが正常に起動しているかを確認正常なら次へ進む
+* コンテナ停止方法```docker compose down```
 
 ## Laravelアプリの作成
 1. Dickerコンテナに入る```docker compose exec app bash```
@@ -14,7 +15,7 @@
    chown www-data storage/ -R
    ```
 4. localhost:8000へアクセス
-
+5. 抜ける方法```exit```
 
 ## デフォルトからの変更点
 * dbのport番号を50000番に変更
