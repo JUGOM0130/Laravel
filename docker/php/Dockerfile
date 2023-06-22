@@ -21,3 +21,6 @@ ENV PATH $PATH:/composer/vendor/bin
 WORKDIR /var/www
 
 RUN composer global require "laravel/installer"
+
+# 追加
+WORKDIR /var/www/laravel-project
