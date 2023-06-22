@@ -4,6 +4,12 @@ services:
     build: ./docker/php
     volumes:
       - .:/var/www
+    deploy:
+      resources:
+        limits:
+          cpus: '1'
+          memory: 1.3g
+
   nginx:
     image: nginx
     container_name: nginx
@@ -15,6 +21,11 @@ services:
     working_dir: /var/www
     depends_on:
       - app
+    deploy:
+      resources:
+        limits:
+          cpus: '1'
+          memory: 1.3g
   db:
     image: mysql:5.7
     container_name: db
@@ -31,3 +42,8 @@ services:
       - ./docker/db/sql:/docker-entrypoint-initdb.d
     ports:
       - 50000:3306
+    deploy:
+      resources:
+        limits:
+          cpus: '1'
+          memory: 1.3g
