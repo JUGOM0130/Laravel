@@ -18,4 +18,4 @@ Route::get('/', function () {
 });
 
 
-Route::resource('todo', 'HelloController');
+Route::get('/list', [TodoListController::class, 'index']);
