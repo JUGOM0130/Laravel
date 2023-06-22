@@ -7,7 +7,7 @@ services:
     deploy:
       resources:
         limits:
-          cpus: '1'
+          cpus: '0.5'
           memory: 1.3g
 
   nginx:
@@ -24,7 +24,7 @@ services:
     deploy:
       resources:
         limits:
-          cpus: '1'
+          cpus: '0.5'
           memory: 1.3g
   db:
     image: mysql:5.7
@@ -45,5 +45,5 @@ services:
     deploy:
       resources:
         limits:
-          cpus: '1'
+          cpus: '0.5'
           memory: 1.3g

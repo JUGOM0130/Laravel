@@ -1,4 +1,4 @@
-# 導入
+# 導入(環境構築)
 ## Installコマンド
 [参考サイト](https://www.kagoya.jp/howto/cloud/container/docker_laravel/)
 * root dirで```docker compose up -d```を実施すると起動します
@@ -27,11 +27,11 @@
 
 ## php.iniなどを変更した時
 * 再ビルド
-```
-  docker compose down
-  docker compose build
-  docker compose up -d
-```
+  ```
+    docker compose down
+    docker compose build
+    docker compose up -d
+  ```
 
 ## デフォルトからの変更点
 * dbのport番号を50000番に変更
@@ -42,21 +42,33 @@
 [公式　8.xドキュメント](https://readouble.com/laravel/8.x/ja/)
 ## マイグレーションの作成
 * ファイルの場所とファイル名ルール
-  database/migrations
-  2014_09_09_000000_create_users_table.php
-  生成時間　　　　　　　アクション名　テーブル名　　となっている
+  * database/migrations
+  * 2014_09_09_000000_create_users_table.php
+  * 生成時間 + アクション名 + テーブル名　　となっている
+
 * ファイル生成コマンド
-  ```php artisan make:migration create_テーブル名[複数系の単語にする]_table```
-  カラム追加：```add_カラム名_to_users_table```
+  ```
+  php artisan make:migration create_テーブル名[複数系の単語にする]_table
+  # php artisan make:migration create_users_table #usersテーブルの作成
+  ```
+* カラム追加
+  ```
+  add_カラム名_to_users_table
+  ```
 * 実行コマンド
-  全ファイルが実行される：```php artisan migrate```
+  ```
+  php artisan migrate
+  ```
+* ロールバックする
+  ```
+  php artisan migrate:rollback
+  ```
 ### マイグレーションの中身
 * upとdown
   upが作成（実行）
   downが削除（元に戻す）
 
 ### migrationできない
-```
-  php artisan config:cache#
-  php artisan migrate
-```
+* compose.ymlのDBコンテナ名をDB_HOSTに設定するroopBackアドレスだとNGかも
+* phpに接続できてなかった（portが50000:3306だったのに対して、50000を指定していたしかしコマンドはコンテナ内部から実行になるので、3306で良かった模様）
+
