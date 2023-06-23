@@ -13,6 +13,8 @@ class TodoListController extends Controller
     {
         $todo_lists = TodoList::all(); //DBからデータをすべて取り出す
 
+        //下記修正したら表示された
+        //return view('todo_list.index', ['todo_lists', $todo_lists]);
         return view('todo_list.index', ['todo_lists' => $todo_lists]);
     }
 }
