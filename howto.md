@@ -116,7 +116,7 @@
   * database/migrations/<color="orange">2023_06_22_000000_create_todo_lists_table.php</color>
 
 * マイグレーションファイル追記
-  
+
   ```php
   public function up()
   {
@@ -132,7 +132,7 @@
 * ダミーデータの登録　```php artisan make:seeder TodoListSeeder```
 
 * ```database/seeders/TodoListSeeder.php```　の編集
-  
+
   ```php
   <?php
   namespace Database\Seeders;
@@ -186,7 +186,7 @@
 ### コントローラーを作成
 
 * app\Http\Controllers\TodoListContoroller.phpを編集
-  
+
   ```php
   <?php
 
@@ -201,7 +201,9 @@
     {
       $todo_lists = TodoList::all();
 
-      return view('todo_list.index', ['todo_lists', $todo_lists]);
+      var_dumps($todo_lists);
+
+      return view('todo_list.index', ['todo_lists'=> $todo_lists]);
     }
   }
 
@@ -216,7 +218,7 @@
   また、ビューに値を渡すときは、このように変数名と値がペアになった連想配列を第2引数に設定します。
 
 ### Viewファイルを用意する
-  
+
 * ```resrouces/views/todo_list/index.blade.php```
 * このファイルでは、さきほどコントローラーから渡された「todo_lists」を表示します。</br>
   そのためには、以下のように書きます。
@@ -256,12 +258,14 @@
   * ```routes/web.php```に追記
 
     ```php
+    use App\Http\Controllers\TodoListController;//追記
+
     Route::get('/list', [TodoListController::class, 'index']);
     ```
-  
+
   * ルーティングには下記の様に記載
     * ```Route::get( アドレス , [コントローラーの名前::class , メソッド名] );```
-  
+
 * ページへアクセス
 
 * データを削除
