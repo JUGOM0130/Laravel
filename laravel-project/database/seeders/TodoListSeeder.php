@@ -13,6 +13,9 @@ class TodoListSeeder extends Seeder
      */
     public function run(): void
     {
+
+        //DB::table('todo_lists')->delete();
+        DB::table('todo_lists')->truncate();
         DB::table('todo_lists')->insert(
             [
                 [

@@ -103,6 +103,9 @@
 * compose.ymlのDBコンテナ名をDB_HOSTに設定するroopBackアドレスだとNGかも
 * phpに接続できてなかった（portが50000:3306だったのに対して、50000を指定していたしかしコマンドはコンテナ内部から実行になるので、3306で良かった模様）
 
+
+<hr color="red">
+
 ## [学習サイト](https://b-risk.jp/blog/2022/08/laravel/#MVC-2)
 
 ### model作成
@@ -111,9 +114,9 @@
 * テーブル名は「複数系」
 * ```php artisan make:model TodoList -mc```実行
 * 3つのファイルが生成される
-  * app/Http/Controllers/<color="orange">TodoListController.php</color>
-  * app/Models/<color="orange">TodoList.php</color>
-  * database/migrations/<color="orange">2023_06_22_000000_create_todo_lists_table.php</color>
+  * app/Http/Controllers/<font color="orange">TodoListController.php</font>
+  * app/Models/<font color="orange">TodoList.php</font>
+  * database/migrations/<font color="orange">2023_06_22_000000_create_todo_lists_table.php</font>
 
 * マイグレーションファイル追記
 
@@ -264,7 +267,7 @@
     ```
 
   * ルーティングには下記の様に記載
-    * ```Route::get( アドレス , [コントローラーの名前::class , メソッド名] );```
+    * ```Route::get( アドレス , [コントローラーの名前::class => メソッド名] );```
 
 * ページへアクセス
 
@@ -273,3 +276,29 @@
   * ```php artisan migrate:fresh --seed```
 
 * 再びアクセスするとデータが消えているはず！
+
+## 手動で作成する場合（命名規則など）
+
+* Carの場合
+  * コントローラー作成
+    ```
+    php artisan make:controller CarController
+    ```
+  * モデル作成
+    ```
+    php artisan make:model Cars
+
+    php artisan migrate
+    ```
+  * シーダー作成
+    ```
+    php artisan make:sheeder CarsSeeder
+    php artosan db:seed
+
+    # 別の方法(DatabaseSeeder.phpに記載した場合)
+    php artisan db:seed --class CarSeeder
+    ```
+  * ビュー作成
+    ```
+    php artisan make:view Car
+    ```

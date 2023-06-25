@@ -21,5 +21,8 @@ class DatabaseSeeder extends Seeder
         $this->call([
             TodoListSeeder::class
         ]);
+        $this->call([
+            MoneyManagementsSeeder::class
+        ]);
     }
 }
