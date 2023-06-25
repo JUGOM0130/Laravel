@@ -11,13 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('money_management', function (Blueprint $tbl) {
-            $tbl->id();
-            $tbl->integer("month");
-            $tbl->integer("category");
-            $tbl->integer("kingaku");
-            $tbl->string("comment");
-            $tbl->timestamps();
+        Schema::table('money_managements', function (Blueprint $table) {
+            $table->integer('year')->after("id");
         });
     }
 
@@ -26,6 +21,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('money_management');
+        Schema::table('money_managements', function (Blueprint $table) {
+            //
+        });
     }
 };

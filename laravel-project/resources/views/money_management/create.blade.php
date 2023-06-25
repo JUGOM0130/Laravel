@@ -12,6 +12,13 @@
     <form action="{{ route('moneydata.store') }}" method="post">
         @csrf
         <div>
+            <select name="year" id="year">
+                <option value="2022">2022</option>
+                <option value="2023">2023</option>
+            </select>
+            <label for="year">年</label>
+        </div>
+        <div>
             <select name="month" id="month">
                 @for($i=1; $i<=12; $i++) <option value="{{ $i }}">{{ $i }}</option>
                     @endfor
@@ -38,13 +45,16 @@
     <table>
         <tr>
             <th>ID</th>
+            <th>年</th>
             <th>月</th>
             <th>カテゴリ</th>
+            <th>金額</th>
             <th>コメント</th>
         </tr>
         @foreach($list as $data)
         <tr>
             <td>{{$data->id}}</td>
+            <td>{{$data->year}}</td>
             <td>{{$data->month}}</td>
             <td>{{$data->category}}</td>
             <td>{{$data->kingaku}}</td>

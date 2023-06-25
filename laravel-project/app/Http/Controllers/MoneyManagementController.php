@@ -22,10 +22,10 @@ class MoneyManagementController extends Controller
 
     public function create(Request $request)
     {
-        $list = MoneyManagements::all(); //DBからデータをすべて取り出す
+        //$list = MoneyManagements::all(); //DBからデータをすべて取り出す
 
-        //下記修正したら表示された
-        //return view('todo_list.index', ['todo_lists', $todo_lists]);
+        $list = MoneyManagements::orderBy('category', 'desc')->orderBy('year', 'desc')->orderBy('month', 'desc')->get();
+
         return view('money_management.create', ['list' => $list]);
     }
 
@@ -33,6 +33,7 @@ class MoneyManagementController extends Controller
     public function store(Request $request)
     {
         $model = new MoneyManagements();
+        $model->year = $request->input('year');
         $model->month = $request->input('month');
         $model->category = $request->input('category');
         $model->kingaku = $request->input('kingaku');
