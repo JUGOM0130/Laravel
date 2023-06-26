@@ -1,5 +1,9 @@
 # Laravel
 
+## VScode拡張機能
+
+* MaterialIconTheme
+
 ## 参考
 
 [学習サイト](https://www.techpit.jp/courses/42/curriculums/45/sections/362/parts/1143)
