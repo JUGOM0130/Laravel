@@ -17,10 +17,14 @@ use App\Http\Controllers\MoneyManagementController; //追記
 Route::get('/', function () {
     return view('welcome');
 });
-
-
 Route::get('/list', [TodoListController::class, 'index']);
 
-Route::get('/mm', [MoneyManagementController::class, 'index']);
-Route::get('/mm/create', [MoneyManagementController::class, 'create'])->name('money.toroku');
-Route::post('/mm/store', [MoneyManagementController::class, 'store'])->name('moneydata.store');
+
+
+/*MoneyManagement */
+Route::prefix('mm')->group(function(){
+    Route::get('/', [MoneyManagementController::class, 'index']);
+    Route::get('/create', [MoneyManagementController::class, 'create'])->name('money.toroku');
+    Route::post('/store', [MoneyManagementController::class, 'store'])->name('moneydata.store');    
+    //Route::get('/show');//詳細画面
+});

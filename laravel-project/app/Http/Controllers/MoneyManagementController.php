@@ -13,7 +13,7 @@ class MoneyManagementController extends Controller
 {
     public function index(Request $request)
     {
-        $list = MoneyManagements::all(); //DBからデータをすべて取り出す
+        $list = MoneyManagements::orderBy('category', 'desc')->orderBy('year', 'desc')->orderBy('month', 'desc')->get();
 
         //下記修正したら表示された
         //return view('todo_list.index', ['todo_lists', $todo_lists]);
@@ -24,9 +24,7 @@ class MoneyManagementController extends Controller
     {
         //$list = MoneyManagements::all(); //DBからデータをすべて取り出す
 
-        $list = MoneyManagements::orderBy('category', 'desc')->orderBy('year', 'desc')->orderBy('month', 'desc')->get();
-
-        return view('money_management.create', ['list' => $list]);
+        return view('money_management.create');
     }
 
 

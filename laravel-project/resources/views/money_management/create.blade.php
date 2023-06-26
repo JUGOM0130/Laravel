@@ -20,8 +20,9 @@
         </div>
         <div>
             <select name="month" id="month">
-                @for($i=1; $i<=12; $i++) <option value="{{ $i }}">{{ $i }}</option>
-                    @endfor
+                @for($i=1; $i<=12; $i++)
+                <option value="{{ $i }}">{{ $i }}</option>
+                @endfor
             </select><label for="month">月</label>
         </div>
         <div>
@@ -40,29 +41,6 @@
         </div>
         <input type="submit" value="登録">
     </form>
-
-    <hr>
-    <table>
-        <tr>
-            <th>ID</th>
-            <th>年</th>
-            <th>月</th>
-            <th>カテゴリ</th>
-            <th>金額</th>
-            <th>コメント</th>
-        </tr>
-        @foreach($list as $data)
-        <tr>
-            <td>{{$data->id}}</td>
-            <td>{{$data->year}}</td>
-            <td>{{$data->month}}</td>
-            <td>{{$data->category}}</td>
-            <td>{{$data->kingaku}}</td>
-            <td>{{$data->comment}}</td>
-        </tr>
-        @endforeach
-    </table>
-
 
 </body>
 
