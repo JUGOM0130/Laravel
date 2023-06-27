@@ -22,9 +22,9 @@ Route::get('/list', [TodoListController::class, 'index']);
 
 
 /*MoneyManagement */
-Route::prefix('mm')->group(function(){
+Route::prefix('mm')->group(function () {
     Route::get('/', [MoneyManagementController::class, 'index']);
     Route::get('/create', [MoneyManagementController::class, 'create'])->name('money.toroku');
-    Route::post('/store', [MoneyManagementController::class, 'store'])->name('moneydata.store');    
-    //Route::get('/show');//詳細画面
+    Route::post('/store', [MoneyManagementController::class, 'store'])->name('moneydata.store');
+    Route::get('/show', [MoneyManagementController::class, 'show'])->name('money.show'); //詳細画面
 });

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\MoneyManagements;
+use Database\Seeders\MoneyManagement;
 use Illuminate\Http\Request;
 
 use function PHPUnit\Framework\returnSelf;
@@ -39,5 +40,18 @@ class MoneyManagementController extends Controller
         $model->save();
 
         return redirect()->route('money.toroku');
+    }
+
+
+    public function show(Request $req)
+    {
+
+        dd($req->query());
+
+
+        $data = MoneyManagements::find($req->id);
+        dd($data);
+
+        return view('money_management.edit', ['data' => $data]);
     }
 }
