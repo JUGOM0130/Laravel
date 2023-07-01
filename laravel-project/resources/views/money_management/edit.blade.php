@@ -12,7 +12,6 @@
     <form action="{{ route('moneydata.store') }}" method="post">
         @csrf
         <div>
-            dd($data)
 
             <select name="year" id="year">
                 <option value="2022">2022</option>

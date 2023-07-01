@@ -43,15 +43,10 @@ class MoneyManagementController extends Controller
     }
 
 
-    public function show(Request $req)
+    public function show($id)
     {
+        $data = MoneyManagements::find(intval($id));
 
-        dd($req->query());
-
-
-        $data = MoneyManagements::find($req->id);
-        dd($data);
-
-        return view('money_management.edit', ['data' => $data]);
+        return view('money_management.show', ['data' => $data]);
     }
 }

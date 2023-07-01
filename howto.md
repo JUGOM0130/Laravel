@@ -6,10 +6,14 @@
   * コンテナに入る```docker compose exec app bash```
   * ログを表示する```docker compose logs -f```
     * -f はログを監視し続けるflow
-  
+
 ## VScode拡張機能
 
 * MaterialIconTheme
+
+## Formファザード導入
+
+* composer require laravelcollective/html
 
 ## 参考
 
