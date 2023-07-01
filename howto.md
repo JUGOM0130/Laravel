@@ -1,5 +1,12 @@
 # Laravel
 
+## Docker コマンド
+
+  * 起動```docker compose up -d```
+  * コンテナに入る```docker compose exec app bash```
+  * ログを表示する```docker compose logs -f```
+    * -f はログを監視し続けるflow
+  
 ## VScode拡張機能
 
 * MaterialIconTheme
