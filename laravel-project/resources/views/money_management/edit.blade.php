@@ -9,39 +9,34 @@
 
 <body>
     <h1>EDIT</h1>
-    <form action="{{ route('moneydata.store') }}" method="post">
-        @csrf
-        <div>
+    {{Form::open(['method'=>'post','route'=>['money.update']])}}
+    @csrf
+    @method('put')
 
-            <select name="year" id="year">
-                <option value="2022">2022</option>
-                <option value="2023">2023</option>
-            </select>
-            <label for="year">年</label>
-        </div>
-        <div>
-            <select name="month" id="month">
-                @for($i=1; $i<=12; $i++) <option value="{{ $i }}">{{ $i }}</option>
-                    @endfor
-            </select><label for="month">月</label>
-        </div>
-        <div>
-            <label for="category">カテゴリ</label>
-            <select name="category" id="category">
-                <option value="1">電気代</option>
-                <option value="2">ガス代</option>
-                <option value="3">水道代</option>
-            </select>
-        </div>
-        <div>
-            <label for="kingaku">金額</label><input type="number" name="kingaku" id="kingaku">
-        </div>
-        <div>
-            <label for="comment">コメント</label><textarea name="comment" id="comment" cols="30" rows="3"></textarea>
-        </div>
-        <input type="submit" value="登録">
-    </form>
-
+    <div>
+        {{Form::select('year',["2022"=>2022,"2023"=>2023,"2024"=>2024],$data->year,['id'=>'year'])}}
+        {{Form::label('year','年')}}
+    </div>
+    <div>
+        {{Form::select('month',["1"=>1,"2"=>2,"3"=>3,"4"=>4,"5"=>5,"6"=>6,"7"=>7,"8"=>8,"9"=>9,"10"=>10,"11"=>11,"12"=>12],$data->month,['id'=>'month'])}}
+        {{Form::label('month','月')}}
+    </div>
+    <div>
+        {{Form::select('category',["1"=>"電気代","2"=>"ガス代","3"=>"水道代"],$data->category,['id'=>'category'])}}
+        {{Form::label('category','月')}}
+    </div>
+    <div>
+        {{Form::label('kingaku','金額')}}
+        {{Form::input('number','kingaku',$data->kingaku,['id'=>'kingaku'])}}
+        {{Form::label('kingaku','円')}}
+    </div>
+    <div>
+        {{Form::label('comment',"コメント")}}
+        {{Form::textarea('comment',$data->comment)}}
+    </div>
+    {{Form::hidden('id', $data->id)}}
+    {{Form::submit("更新",['class'=>'btn'])}}
+    {{Form::close()}}
 </body>
 
 </html>

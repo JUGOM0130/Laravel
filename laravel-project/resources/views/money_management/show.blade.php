@@ -35,10 +35,16 @@
         </div>
     </div>
     <!-- Formタグ生成 -->
-    {{Form::open(['method'=>'delete','route'=>['money.delete','id'=>$data->id]])}}
-        @csrf
-        @method('post')
-        {{Form::submit('削除')}}
+    {{Form::open(['method'=>'post','route'=>['money.destroy','id'=>$data->id]])}}
+    @csrf
+    @method('delete')
+    {{Form::submit('削除')}}
+    {{Form::close()}}
+
+    {{Form::open(['method'=>'post','route'=>['money.edit','id'=>$data->id]])}}
+    @csrf
+    @method('post')
+    {{Form::submit('編集')}}
     {{Form::close()}}
 </body>
 

@@ -39,7 +39,7 @@ class MoneyManagementController extends Controller
         $model->comment = $request->input('comment');
         $model->save();
 
-        return redirect()->route('money.toroku');
+        return redirect()->route('money.index');
     }
 
 
@@ -49,15 +49,30 @@ class MoneyManagementController extends Controller
 
         return view('money_management.show', ['data' => $data]);
     }
-    
-    public function delete($id)
+
+    public function destroy($id)
     {
-        $data = MoneyManagements::find(intval($id));
-        dd($id);
-        
-        return view('money_management.show', ['data' => $data]);
+        MoneyManagements::destroy(intval($id));
+
+        return redirect()->route('money.index');
     }
 
-    
+    public function edit($id)
+    {
+        $data = MoneyManagements::find($id);
+        return view('money_management.edit', ['data' => $data]);
+    }
 
+    public function update(Request $request)
+    {
+        $mm = MoneyManagements::where('id', $request->id);
+        $mm->update([
+            "year" => $request->year,
+            "month" => $request->month,
+            "category" => $request->category,
+            "kingaku" => $request->kingaku,
+            "comment" => $request->comment
+        ]);
+        return redirect()->route('money.index');
+    }
 }
