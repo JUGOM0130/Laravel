@@ -31,5 +31,5 @@ Route::prefix('mm')->group(function () {
     Route::get('/show/{id}', [MoneyManagementController::class, 'show'])->name('money.show'); //詳細画面
     Route::delete('/destroy/{id}', [MoneyManagementController::class, 'destroy'])->name('money.destroy');
     Route::put('/update', [MoneyManagementController::class, 'update'])->name('money.update');
-    Route::post('/edit/{id}', [MoneyManagementController::class, 'edit'])->name('money.edit');
+    Route::get('/edit/{id}', [MoneyManagementController::class, 'edit'])->name('money.edit');
 });

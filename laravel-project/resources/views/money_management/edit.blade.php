@@ -14,8 +14,8 @@
     @method('put')
 
     <div>
-        {{Form::select('year',["2022"=>2022,"2023"=>2023,"2024"=>2024],$data->year,['id'=>'year'])}}
-        {{Form::label('year','年')}}
+        {{Form::label('year','年',["class"=>"form-label"])}}
+        {{Form::select('year',["2022"=>2022,"2023"=>2023,"2024"=>2024],$data->year,['id'=>'year','class'=>'form-control'])}}
     </div>
     <div>
         {{Form::select('month',["1"=>1,"2"=>2,"3"=>3,"4"=>4,"5"=>5,"6"=>6,"7"=>7,"8"=>8,"9"=>9,"10"=>10,"11"=>11,"12"=>12],$data->month,['id'=>'month'])}}
