@@ -27,4 +27,6 @@ Route::prefix('mm')->group(function () {
     Route::get('/create', [MoneyManagementController::class, 'create'])->name('money.toroku');
     Route::post('/store', [MoneyManagementController::class, 'store'])->name('moneydata.store');
     Route::get('/show/{id}', [MoneyManagementController::class, 'show'])->name('money.show'); //詳細画面
+    Route::delete('/delete/{id}', [MoneyManagementController::class, 'delete'])->name('money.delete'); 
+
 });

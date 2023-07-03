@@ -34,7 +34,12 @@
             {{Form::textarea('comment',$data->comment)}}
         </div>
     </div>
-
+    <!-- Formタグ生成 -->
+    {{Form::open(['method'=>'delete','route'=>['money.delete','id'=>$data->id]])}}
+        @csrf
+        @method('post')
+        {{Form::submit('削除')}}
+    {{Form::close()}}
 </body>
 
 </html>

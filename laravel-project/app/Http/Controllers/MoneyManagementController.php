@@ -49,4 +49,15 @@ class MoneyManagementController extends Controller
 
         return view('money_management.show', ['data' => $data]);
     }
+    
+    public function delete($id)
+    {
+        $data = MoneyManagements::find(intval($id));
+        dd($id);
+        
+        return view('money_management.show', ['data' => $data]);
+    }
+
+    
+
 }
