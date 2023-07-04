@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CarInfoController; //add
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TodoListController; //追記
 use App\Http\Controllers\MoneyManagementController; //追記
@@ -32,4 +33,8 @@ Route::prefix('mm')->group(function () {
     Route::delete('/destroy/{id}', [MoneyManagementController::class, 'destroy'])->name('money.destroy');
     Route::put('/update', [MoneyManagementController::class, 'update'])->name('money.update');
     Route::get('/edit/{id}', [MoneyManagementController::class, 'edit'])->name('money.edit');
+});
+
+Route::prefix('/car_info')->group(function () {
+    Route::get('/', [CarInfoController::class, 'index'])->name('car_info.index');
 });
