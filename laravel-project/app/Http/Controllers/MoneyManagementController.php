@@ -36,7 +36,7 @@ class MoneyManagementController extends Controller
         $model->month = $request->input('month');
         $model->category = $request->input('category');
         $model->kingaku = $request->input('kingaku');
-        $model->comment = $request->input('comment');
+        $model->comment = $request->input('comment') ?? ''; #合併演算子左辺がNULLなら右辺を採用
         $model->save();
 
         return redirect()->route('money.index');
