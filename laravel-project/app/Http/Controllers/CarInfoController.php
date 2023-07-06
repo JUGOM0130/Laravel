@@ -22,6 +22,7 @@ class CarInfoController extends Controller
     public function create()
     {
         //
+        return view('car_info.create');
     }
 
     /**

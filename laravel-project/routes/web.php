@@ -38,4 +38,5 @@ Route::prefix('mm')->group(function () {
 Route::prefix('/car_info')->group(function () {
     Route::get('/', [CarInfoController::class, 'index'])->name('car_info.index');
     Route::get('/create', [CarInfoController::class, 'create'])->name('car_info.create');
+    Route::get('/store', [CarInfoController::class, 'store'])->name('car_info.store');
 });
