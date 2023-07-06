@@ -13,7 +13,7 @@ return new class extends Migration
     public function up(): void
     {
         if(Schema::hasColumn('money_managements','year')){
-            //money_managementsテーブルにyearカラムがあれば            
+            //money_managementsテーブルにyearカラムがあればreturn以降の処理実行しない
             return;
         }
         Schema::table('money_managements', function (Blueprint $table) {
