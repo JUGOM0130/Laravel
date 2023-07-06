@@ -13,6 +13,7 @@ class CarInfoController extends Controller
     public function index()
     {
         //
+
         return view('car_info.index');
     }
 

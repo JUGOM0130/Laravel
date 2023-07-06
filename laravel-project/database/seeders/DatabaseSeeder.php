@@ -24,5 +24,8 @@ class DatabaseSeeder extends Seeder
         $this->call([
             MoneyManagementsSeeder::class
         ]);
+        $this->call([
+            CarInfoSeeder::class
+        ]);
     }
 }

@@ -18,6 +18,15 @@ class MoneyManagementsSeeder extends Seeder
             [
                 [
                     'year' => 2023,
+                    'month' => 6,
+                    'category' => 2,
+                    'kingaku' => 4777,
+                    'comment' => "",
+                    'created_at' => now(),
+                    'updated_at' => now(),
+                ],
+                [
+                    'year' => 2023,
                     'month' => 3,
                     'category' => 3,
                     'kingaku' => 9320,

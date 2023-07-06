@@ -11,6 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
+
+        if (Schema::hasColumn('todo_lists', 'name')) {
+            return;
+        }
         Schema::table('todo_lists', function (Blueprint $table) {
             $table->string('name'); //★追記
         });
