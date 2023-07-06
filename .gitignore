@@ -20,4 +20,4 @@
 */.vscode
 
 
-docker/**
+docker/db/
