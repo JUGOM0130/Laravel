@@ -21,7 +21,8 @@ return new class extends Migration
             $table->integer("season_D")->comment("off_season");
             $table->boolean("is_entry_car")->comment("車の乗り入れ可否");
             $table->boolean("is_reserve")->comment("予約");
-            
+            $table->string("place")->comment("場所");
+
 
             $table->timestamps();
         });
