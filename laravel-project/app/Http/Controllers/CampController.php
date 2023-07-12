@@ -62,9 +62,11 @@ class CampController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Camp $camp)
+    public function edit(Camp $camp,Request $request)
     {
         //
+        $dt = $camp->find($request->id)->first();
+        return view('camp.edit',['data'=>$dt]);
     }
 
     /**
@@ -72,7 +74,22 @@ class CampController extends Controller
      */
     public function update(Request $request, Camp $camp)
     {
-        //
+        $dt = $camp->find($request->id);
+        $dt->season_start = $request->season_start;
+        $dt->season_end = $request->season_end;
+        $dt->address1=$request->address1;
+        $dt->place_name=$request->place_name;
+        $dt->season_A=$request->season_A;
+        $dt->season_B=$request->season_B;
+        $dt->season_C=$request->season_C;
+        $dt->season_D=$request->season_D;
+        $dt->is_entry_car=$request->is_entry_car??false;
+        $dt->is_reserve=$request->is_reserve??false;
+        $dt->comment=$request->comment;
+
+        $dt->save();
+
+        return redirect(route('camp.index'));
     }
 
     /**

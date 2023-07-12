@@ -17,22 +17,22 @@
             <thead>
                 <tr>
                     <th scope="col">ID</th>
-                    <th scope="col"></th>
-                    <th scope="col"></th>
-                    <th scope="col"></th>
-                    <th scope="col"></th>
-                    <th scope="col"></th>
-                    <th scope="col"></th>
-                    <th scope="col"></th>
-                    <th scope="col"></th>
-                    <th scope="col"></th>
-                    <th scope="col"></th>
+                    <th scope="col">シーズン開始</th>
+                    <th scope="col">シーズン終了</th>
+                    <th scope="col">TOP</th>
+                    <th scope="col">HIGH</th>
+                    <th scope="col">REGULAR</th>
+                    <th scope="col">OFF</th>
+                    <th scope="col">名称</th>
+                    <th scope="col">住所</th>
+                    <th scope="col">コメント</th>
+
                 </tr>
             </thead>
             <tbody>
                 @foreach ($list as $d)
                     <tr>
-                        <td>{{ $d->id }}</td>
+                        <td><a href={{ route('camp.edit', ['id' => $d->id]) }}>{{ $d->id }}</a></td>
                         <td>{{ $d->season_start }}</td>
                         <td>{{ $d->season_end }}</td>
                         <td>{{ $d->season_A }}</td>
@@ -46,6 +46,7 @@
                 @endforeach
             </tbody>
         </table>
+        <a href="{{ route('camp.create') }}">登録</a>
     </div>
 </body>
 
