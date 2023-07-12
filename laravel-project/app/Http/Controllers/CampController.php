@@ -13,6 +13,11 @@ class CampController extends Controller
     public function index()
     {
         //
+        $list = Camp::get();
+
+        //下記修正したら表示された
+        //return view('todo_list.index', ['todo_lists', $todo_lists]);
+        return view('camp.index', ['list' => $list]);
     }
 
     /**
@@ -29,7 +34,21 @@ class CampController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Camp::create([
+            'season_start'=>$request->season_start,
+            'season_end'=>$request->season_end,
+            'address1'=>$request->address1,
+            'place_name'=>$request->place_name,
+            'season_A'=>$request->season_A,
+            'season_B'=>$request->season_B,
+            'season_C'=>$request->season_C,
+            'season_D'=>$request->season_D,
+            'is_entry_car'=>$request->is_entry_car ?? false,
+            'is_reserve'=>$request->is_reserve ?? false,
+            'comment'=>$request->comment
+        ]);
+
+        return view('camp.index');
     }
 
     /**
