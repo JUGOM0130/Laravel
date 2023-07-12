@@ -95,8 +95,12 @@ class CampController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Camp $camp)
+    public function destroy(Camp $camp,Request $request)
     {
         //
+        $id = $request->id;
+        $camp->destroy($id);
+
+        return redirect(route('camp.index'));
     }
 }

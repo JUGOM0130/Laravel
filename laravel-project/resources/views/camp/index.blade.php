@@ -24,8 +24,8 @@
                     <th scope="col">REGULAR</th>
                     <th scope="col">OFF</th>
                     <th scope="col">名称</th>
-                    <th scope="col">住所</th>
                     <th scope="col">コメント</th>
+                    <th scope="col">削除</th>
 
                 </tr>
             </thead>
@@ -40,8 +40,13 @@
                         <td>{{ $d->season_C }}</td>
                         <td>{{ $d->season_D }}</td>
                         <td>{{ $d->place_name }}</td>
-                        <td>{{ $d->address1 }}</td>
                         <td>{{ $d->comment }}</td>
+                        <td>
+
+                            {{ Form::open(['method' => 'delete', 'route' => ['camp.destroy', 'id' => $d->id]]) }}
+                            {{ Form::submit('削除', ['class' => 'btn btn-outline-primary']) }}
+                            {{ Form::close() }}
+                        </td>
                     </tr>
                 @endforeach
             </tbody>
