@@ -21,6 +21,7 @@ class CampController extends Controller
     public function create()
     {
         //
+        return view('camp.create');
     }
 
     /**
