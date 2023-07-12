@@ -48,7 +48,7 @@ class CampController extends Controller
             'comment'=>$request->comment
         ]);
 
-        return view('camp.index');
+        return redirect(route('camp.index'));
     }
 
     /**
