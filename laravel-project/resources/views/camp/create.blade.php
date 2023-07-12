@@ -11,43 +11,47 @@
 </head>
 <body>
 <div class="container">
+    <h1>CREATE</h1>
 {{Form::open(['method'=>'post','route'=>['camp.store']])}}
 {{Form::token()}}
-    <div>
-        {{Form::label('season_start','シーズン開始日')}}
-        {{Form::date('season_start')}}
+<div class="row">
+    <div class="col mb-3">
+        {{Form::label('season_start','シーズン開始日',['class'=>'form-label'])}}
+        {{Form::date('season_start',null,['class'=>'form-control'])}}
     </div>
-    <div>
-        {{Form::label('season_end','シーズン終了日')}}
-        {{Form::date('season_end')}}
-    </div>
-    <div>
-        {{Form::label('place','場所')}}
-        {{Form::text('place',"")}}
-    </div>
-    <div class="row">
-    <div class="col">
-        {{Form::label('season_A','トップシーズン料金')}}
-        {{Form::number('season_A',0)}}
-    </div>
-    <div class="col">
-        {{Form::label('season_B','ハイシーズン料金')}}
-        {{Form::number('season_B',0)}}
-    </div>
-    <div class="col">
-        {{Form::label('season_C','レギュラーシーズン料金')}}
-        {{Form::number('season_C',0)}}
-    </div>
-    <div class="col">
-        {{Form::label('season_D','オフシーズン料金')}}
-        {{Form::number('season_D',0)}}
+    <div class="col mb-3">
+        {{Form::label('season_end','シーズン終了日',['class'=>'form-label'])}}
+        {{Form::date('season_end',null,['class'=>'form-control'])}}
     </div>
 </div>
-    <div>
+
+    <div class="mb-3">
+        {{Form::label('place','場所',['class'=>'form-label'])}}
+        {{Form::text('place',"",['class'=>'form-control'])}}
+    </div>
+    <div class="row mb-3">
+    <div class="col">
+        {{Form::label('season_A','トップシーズン料金',['class'=>'form-label'])}}
+        {{Form::number('season_A',0,['class'=>'form-control'])}}
+    </div>
+    <div class="col">
+        {{Form::label('season_B','ハイシーズン料金',['class'=>'form-label'])}}
+        {{Form::number('season_B',0,['class'=>'form-control'])}}
+    </div>
+    <div class="col">
+        {{Form::label('season_C','レギュラーシーズン料金',['class'=>'form-label'])}}
+        {{Form::number('season_C',0,['class'=>'form-control'])}}
+    </div>
+    <div class="col">
+        {{Form::label('season_D','オフシーズン料金',['class'=>'form-label'])}}
+        {{Form::number('season_D',0,['class'=>'form-control'])}}
+    </div>
+</div>
+    <div class="mb-3">
         {{Form::checkbox('is_entry_car', '1', false,['id'=>"is_entry_car"])}}
         {{Form::label('is_entry_car','車の乗り入れ')}}
     </div>
-    <div>
+    <div class="mb-3">
         {{Form::checkbox('is_reserve', '1', false,['id'=>"is_reserve"])}}
         {{Form::label('is_reserve','予約必要')}}
     </div>
