@@ -49,5 +49,9 @@ Route::prefix('/camp')->group(function () {
     Route::get('/', [CampController::class, 'index'])->name('camp.index');
     Route::get('/create', [CampController::class, 'create'])->name('camp.create');
     Route::get('/store', [CampController::class, 'store'])->name('camp.store');
+    Route::get('/show/{id}', [CampController::class, 'show'])->name('camp.show');
+    Route::get('/destroy/{id}', [CampController::class, 'destroy'])->name('camp.destroy');
+    Route::get('/update', [CampController::class, 'update'])->name('camp.update');
+    Route::get('/edit/{id}', [CampController::class, 'edit'])->name('camp.edit');
 });
 
