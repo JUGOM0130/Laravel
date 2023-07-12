@@ -36,7 +36,7 @@
             <tr>
                 <td>
                     <span class="material-symbols-outlined">
-                        <a class="icon" href="/mm/show/{{$data->id}}">
+                        <a class="icon" href={{route('money.show',['id'=>$data->id])}}>
                             edit_note
                         </a>
                     </span>
