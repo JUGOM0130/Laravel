@@ -45,6 +45,7 @@ Route::prefix('/car_info')->group(function () {
 });
 
 
+/**キャンプ */
 Route::prefix('/camp')->group(function () {
     Route::get('/', [CampController::class, 'index'])->name('camp.index');
     Route::get('/create', [CampController::class, 'create'])->name('camp.create');
