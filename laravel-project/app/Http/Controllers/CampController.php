@@ -66,7 +66,7 @@ class CampController extends Controller
     public function edit(Camp $camp,Request $request)
     {
         //
-        $dt = $camp->find($request->id)->first();
+        $dt = $camp->find($request->id);
         return view('camp.edit',['data'=>$dt]);
     }
 
