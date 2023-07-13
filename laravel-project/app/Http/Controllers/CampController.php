@@ -45,7 +45,8 @@ class CampController extends Controller
             'season_D'=>$request->season_D,
             'is_entry_car'=>$request->is_entry_car ?? false,
             'is_reserve'=>$request->is_reserve ?? false,
-            'comment'=>$request->comment
+            'comment'=>$request->comment,
+            'url'=>$request->url
         ]);
 
         return redirect(route('camp.index'));
@@ -86,7 +87,7 @@ class CampController extends Controller
         $dt->is_entry_car=$request->is_entry_car??false;
         $dt->is_reserve=$request->is_reserve??false;
         $dt->comment=$request->comment;
-
+        $dt->url=$request->url;
         $dt->save();
 
         return redirect(route('camp.index'));
