@@ -17,14 +17,8 @@
             <thead>
                 <tr>
                     <th scope="col">ID</th>
-                    <th scope="col">シーズン開始</th>
-                    <th scope="col">シーズン終了</th>
                     <th scope="col">TOP</th>
-                    <th scope="col">HIGH</th>
-                    <th scope="col">REGULAR</th>
-                    <th scope="col">OFF</th>
                     <th scope="col">名称</th>
-                    <th scope="col">コメント</th>
                     <th scope="col">削除</th>
 
                 </tr>
@@ -33,16 +27,9 @@
                 @foreach ($list as $d)
                     <tr>
                         <td><a href={{ route('camp.edit', ['id' => $d->id]) }}>{{ $d->id }}</a></td>
-                        <td>{{ $d->season_start }}</td>
-                        <td>{{ $d->season_end }}</td>
-                        <td>{{ $d->season_A }}</td>
-                        <td>{{ $d->season_B }}</td>
-                        <td>{{ $d->season_C }}</td>
-                        <td>{{ $d->season_D }}</td>
                         <td>{{ $d->place_name }}</td>
                         <td>{{ $d->comment }}</td>
                         <td>
-
                             {{ Form::open(['method' => 'delete', 'route' => ['camp.destroy', 'id' => $d->id]]) }}
                             {{ Form::submit('削除', ['class' => 'btn btn-outline-primary']) }}
                             {{ Form::close() }}
