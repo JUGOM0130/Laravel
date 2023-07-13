@@ -29,3 +29,4 @@ RUN composer global require "laravel/installer"
 # 追加
 WORKDIR /var/www/laravel-project
 
+EXPOSE 5173

@@ -1,7 +1,10 @@
-import { defineConfig } from 'vite';
+import {
+    defineConfig
+} from 'vite';
 import laravel from 'laravel-vite-plugin';
 /**20230713追記 vueの本体？ */
 import vue from '@vitejs/plugin-vue'
+
 export default defineConfig({
     plugins: [
         laravel({
@@ -13,7 +16,7 @@ export default defineConfig({
     ],
     /**20230713_追記 */
     //ホットリロードが効かないときに使用すると良い
-    server:{
-        host:true
+    server: {
+        host: true
     }
 });
