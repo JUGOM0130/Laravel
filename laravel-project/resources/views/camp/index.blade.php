@@ -16,7 +16,7 @@
         <table class="table">
             <thead>
                 <tr>
-                    <th scope="col">ID</th>
+                    <th scope="col">編集</th>
                     <th scope="col">TOP</th>
                     <th scope="col">名称</th>
                     <th scope="col">削除</th>
@@ -26,12 +26,18 @@
             <tbody>
                 @foreach ($list as $d)
                     <tr>
-                        <td><a href={{ route('camp.edit', ['id' => $d->id]) }}>{{ $d->id }}</a></td>
+                        <td>
+                            {{ Form::open(['method' => 'get', 'route' => ['camp.edit', 'id' => $d->id]]) }}
+                            {{ Form::submit('編集', ['class' => 'btn btn-outline-primary']) }}
+                            {{ Form::close() }}
+                            <!--
+                            <a href={{ route('camp.edit', ['id' => $d->id]) }}>{{ $d->id }}</a></td>
+                            -->
+                        <td>{{ $d->season_A }}</td>
                         <td>{{ $d->place_name }}</td>
-                        <td>{{ $d->comment }}</td>
                         <td>
                             {{ Form::open(['method' => 'delete', 'route' => ['camp.destroy', 'id' => $d->id]]) }}
-                            {{ Form::submit('削除', ['class' => 'btn btn-outline-primary']) }}
+                            {{ Form::submit('削除', ['class' => 'btn btn-outline-danger']) }}
                             {{ Form::close() }}
                         </td>
                     </tr>

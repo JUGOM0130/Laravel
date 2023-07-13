@@ -12,7 +12,7 @@
 </head>
 
 <body>
-    <div class="container">
+    <div id="app" class="container">
         <h1>EDIT</h1>
 
         {{ Form::open(['method' => 'put', 'route' => ['camp.update']]) }}
@@ -45,7 +45,7 @@
         </div>
         <div class="mb-3">
             {{ Form::label('url', 'URL', ['class' => 'form-label']) }}
-            {{ Form::text('url', $data->url, ['class' => 'form-control']) }}
+            {{ Form::text('url', $data->url, ['class' => 'form-control','id'=>'url']) }}
         </div>
         <div class="row mb-3">
             <div class="col">
