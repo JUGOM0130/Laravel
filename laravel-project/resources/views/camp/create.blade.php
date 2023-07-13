@@ -38,7 +38,7 @@
             </div>
             <div class="mb-3 col">
                 {{ Form::label('comment', 'コメント', ['class' => 'form-label']) }}
-                {{ Form::text('comment', '', ['class' => 'form-control']) }}
+                {{ Form::textarea('comment', '', ['class' => 'form-control']) }}
             </div>
         </div>
         <div class="row mb-3">
