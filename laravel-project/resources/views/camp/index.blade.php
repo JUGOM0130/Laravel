@@ -19,6 +19,7 @@
                     <th scope="col">編集</th>
                     <th scope="col">TOP</th>
                     <th scope="col">名称</th>
+                    <th scope="col">リンク</th>
                     <th scope="col">削除</th>
 
                 </tr>
@@ -35,6 +36,7 @@
                             -->
                         <td>{{ $d->season_A }}</td>
                         <td>{{ $d->place_name }}</td>
+                        <td><a href={{ $d->url }}>リンク</a></td>
                         <td>
                             {{ Form::open(['method' => 'delete', 'route' => ['camp.destroy', 'id' => $d->id]]) }}
                             {{ Form::submit('削除', ['class' => 'btn btn-outline-danger']) }}
