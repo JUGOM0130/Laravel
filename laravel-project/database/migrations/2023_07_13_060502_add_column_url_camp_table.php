@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::table('camps', function (Blueprint $table) {
             //
-            $table->string("url")->after("comment")->comment("url")->nullable();
+            $table->string("url",1023)->after("comment")->comment("url")->nullable();
 
         });
     }
