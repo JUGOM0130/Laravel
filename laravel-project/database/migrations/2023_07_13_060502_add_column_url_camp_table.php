@@ -12,7 +12,10 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('camps', function (Blueprint $table) {
-            //
+            //URL列の追加
+            //コメント列の後にURL列を追加
+            //NULLを許容する
+            //DB格納文字数1023文字まで
             $table->string("url",1023)->after("comment")->comment("url")->nullable();
 
         });
