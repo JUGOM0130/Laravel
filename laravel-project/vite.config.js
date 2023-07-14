@@ -10,7 +10,7 @@ export default defineConfig({
         laravel({
             input: ['resources/css/app.css',
                     'resources/js/app.js',
-                    'resources/sass/app.scss'],
+                    'resources/scss/app.scss'],
             refresh: true,
         }),
         /**20230713_追記 */
@@ -19,6 +19,10 @@ export default defineConfig({
     /**20230713_追記 */
     //ホットリロードが効かないときに使用すると良い
     server: {
-        host: true
-    }
+        host: true,
+        hmr: {
+            host: 'localhost',
+        }
+    },
+    
 });
