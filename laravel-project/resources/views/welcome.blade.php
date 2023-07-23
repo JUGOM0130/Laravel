@@ -830,7 +830,7 @@
     </style>
 
     <!--20230713追加 vueを使用するためのおまじない-->
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    @vite(['resources/css/app.css','resources/js/app.js','resources/scss/app.scss'])
 </head>
 
 <body class="antialiased">

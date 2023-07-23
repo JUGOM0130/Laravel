@@ -8,7 +8,9 @@ import vue from '@vitejs/plugin-vue'
 export default defineConfig({
     plugins: [
         laravel({
-            input: ['resources/css/app.css', 'resources/js/app.js'],
+            input: ['resources/css/app.css',
+                    'resources/js/app.js',
+                    'resources/scss/app.scss'],
             refresh: true,
         }),
         /**20230713_追記 */
@@ -17,6 +19,10 @@ export default defineConfig({
     /**20230713_追記 */
     //ホットリロードが効かないときに使用すると良い
     server: {
-        host: true
-    }
+        host: true,
+        hmr: {
+            host: 'localhost',
+        }
+    },
+    
 });
