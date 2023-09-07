@@ -5,6 +5,8 @@ use App\Http\Controllers\TodoListController; //追記
 use App\Http\Controllers\MoneyManagementController; //追記
 use App\Http\Controllers\CarInfoController;
 use App\Http\Controllers\CampController;
+use App\Http\Controllers\VueTestController;
+
 
 use App\Models\MoneyManagements;
 
@@ -54,4 +56,17 @@ Route::prefix('/camp')->group(function () {
     Route::delete('/destroy/{id}', [CampController::class, 'destroy'])->name('camp.destroy');
     Route::put('/update', [CampController::class, 'update'])->name('camp.update');
     Route::get('/edit/{id}', [CampController::class, 'edit'])->name('camp.edit');
+});
+
+
+
+/**vueTest */
+Route::prefix('/vue')->group(function () {
+    Route::get('/', [VueTestController::class, 'index'])->name('vue.index');
+    Route::get('/create', [VueTestController::class, 'create'])->name('vue.create');
+    Route::post('/store', [VueTestController::class, 'store'])->name('vue.store');
+    Route::get('/show/{id}', [VueTestController::class, 'show'])->name('vue.show');
+    Route::delete('/destroy/{id}', [VueTestController::class, 'destroy'])->name('vue.destroy');
+    Route::put('/update', [VueTestController::class, 'update'])->name('vue.update');
+    Route::get('/edit/{id}', [VueTestController::class, 'edit'])->name('vue.edit');
 });

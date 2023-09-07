@@ -829,8 +829,9 @@
         }
     </style>
 
-    <!--20230713追加 vueを使用するためのおまじない-->
-    @vite(['resources/css/app.css','resources/js/app.js','resources/scss/app.scss'])
+    <!--20230713追加 vueを使用するためのおまじない rowNo832-->
+    <!--npm run dev してないとえらーする-->
+    @vite(['resources/css/app.css', 'resources/js/app.js', 'resources/scss/app.scss'])
 </head>
 
 <body class="antialiased">
