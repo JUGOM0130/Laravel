@@ -13,7 +13,8 @@ export default defineConfig({
         laravel({
             input: ['resources/css/app.css',
                     'resources/js/app.js',
-                    'resources/scss/app.scss'],
+                    'resources/scss/app.scss',
+                    'resources/js/vue_test/app.js'],
             refresh: true,
         }),
         /**20230713_追記 */
@@ -25,7 +26,10 @@ export default defineConfig({
         host: true,
         hmr: {
             host: 'localhost',
-        }
+        },
+        watch: {
+            usePolling: true
+          }
     },
     /**20230907追記 */
     resolve: {

@@ -1,6 +1,7 @@
 <script setup></script>
 <template>
   <div>
+    <h1>aaa</h1>
     <ul>
       <li>index.vue</li>
       <li>
@@ -25,9 +26,15 @@
         <li>git cloneしたあと</li>
         <li>npm install</li>
         <li>npm run dev</li>
-        <li>npm run dev -- --force ←キャッシュが残っている場合キャッシュがクリアされる</li>
+        <li>
+          npm run dev -- --force
+          ←キャッシュが残っている場合キャッシュがクリアされる
+        </li>
       </ul>
     </div>
+    <hr>
+    * vueファイルを保存しても画面に反映されない
+    <hr>
   </div>
 </template>
 <style scoped>
