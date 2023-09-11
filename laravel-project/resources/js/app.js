@@ -9,7 +9,7 @@ import {
 createApp({
     setup() {
 
-        const teststring = ref('おはよ！');
+        const teststring = ref('ああああ');
 
         return {
             teststring,
