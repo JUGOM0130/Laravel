@@ -4,6 +4,22 @@ let haioku = ref(HYOJUN_KAKAKU + 11);
 let regular = ref(HYOJUN_KAKAKU);
 let disel = ref(HYOJUN_KAKAKU - 30);
 
+/**
+ * 計算
+ * 
+ * disel comvert to regular
+ * regular 175
+ * disel 145
+ *
+ * d = 30km/l
+ * 145 / 30 = 4.833
+ * 175 - 145 = 30 / 4.833 = 6.21
+ * d + 6.21 = 36.21km/l
+ * 
+ * d = 1000 / 30 = 33.33 * 145 = 4833
+ * r = 1000 / 30 = 33.33 * 175 = 5833
+ * r - d = 1000
+ */
 </script>
 <template>
   <div>
