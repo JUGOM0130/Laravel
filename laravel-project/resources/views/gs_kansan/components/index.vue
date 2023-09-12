@@ -6,6 +6,8 @@ let regular = ref(HYOJUN_KAKAKU);
 let disel = ref(HYOJUN_KAKAKU - 30);
 
 /**
+ * 
+ * url: http://localhost:8888/vue/nenpi
  * 計算
  * 
  * disel comvert to regular
