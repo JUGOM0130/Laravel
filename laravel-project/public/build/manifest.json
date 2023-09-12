@@ -37,13 +37,13 @@
     "src": "resources/css/app.css"
   },
   "resources/js/app.js": {
-    "file": "assets/app-0eef4c42.js",
+    "file": "assets/app-9fe3bca6.js",
     "isEntry": true,
     "src": "resources/js/app.js"
   },
-  "resources/sass/app.scss": {
-    "file": "assets/app-7a114f77.css",
+  "resources/scss/app.scss": {
+    "file": "assets/app-717cfaeb.css",
     "isEntry": true,
-    "src": "resources/sass/app.scss"
+    "src": "resources/scss/app.scss"
   }
 }
