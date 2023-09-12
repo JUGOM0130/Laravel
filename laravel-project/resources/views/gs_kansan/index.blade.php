@@ -8,5 +8,6 @@
 </head>
 <body>
     <div id="app"></div>
+    @vite(['resources/js/gs_kansan/app.js'])
 </body>
 </html>

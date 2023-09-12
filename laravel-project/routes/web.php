@@ -69,4 +69,5 @@ Route::prefix('/vue')->group(function () {
     Route::delete('/destroy/{id}', [VueTestController::class, 'destroy'])->name('vue.destroy');
     Route::put('/update', [VueTestController::class, 'update'])->name('vue.update');
     Route::get('/edit/{id}', [VueTestController::class, 'edit'])->name('vue.edit');
+    Route::get('/nenpi', [VueTestController::class, 'nenpi'])->name('gs_kansan.index');
 });

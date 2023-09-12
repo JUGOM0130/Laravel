@@ -62,4 +62,9 @@ class VueTestController extends Controller
     {
         //
     }
+
+    public function nenpi()
+    {
+        return view("gs_kansan.index");
+    }
 }

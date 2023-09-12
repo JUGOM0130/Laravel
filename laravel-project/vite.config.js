@@ -10,12 +10,7 @@ import laravel from 'laravel-vite-plugin';
 export default defineConfig({
     plugins: [
         laravel({
-<<<<<<< HEAD
-            input: ['resources/css/app.css',
-                    'resources/js/app.js',
-                    'resources/scss/app.scss',
-                    'resources/js/vue_test/app.js'],
-=======
+
             input: [
                 'resources/css/app.css',
                 'resources/js/app.js',
@@ -29,7 +24,6 @@ export default defineConfig({
              * resources/views/**
              * routes/**
              */
->>>>>>> 21a933c58f9d895a1eca5ee6f608e308753fd4b4
             refresh: true,
         }),
         /**20230713_追記 */
@@ -56,8 +50,8 @@ export default defineConfig({
     /**20230907追記 */
     resolve: {
         alias: [{
-            find: "@components@",
-            replacement: path.join(__dirname, 'resources/views/vue_test/components/'),
+            find: "@@",
+            replacement: path.join(__dirname, 'resources/'),
         }],
     },
 });

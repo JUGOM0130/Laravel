@@ -1,4 +1,5 @@
 <script setup>
+import {ref} from 'vue/dist/vue.esm-bundler'
 const HYOJUN_KAKAKU = 175;
 let haioku = ref(HYOJUN_KAKAKU + 11);
 let regular = ref(HYOJUN_KAKAKU);
@@ -58,6 +59,6 @@ let disel = ref(HYOJUN_KAKAKU - 30);
   flex-wrap: wrap;
 }
 .item {
-  flex-grow: 1;
+  flex-grow: 0;
 }
 </style>
