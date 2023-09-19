@@ -30,7 +30,7 @@
 * ```docker compose ps```コマンドでコンテナが正常に起動しているかを確認正常なら次へ進む
 * コンテナ停止方法```docker compose down```
 
-### Laravelアプリの作成
+### Laravelアプリの作成(Docker)
 
 1. Dickerコンテナに入る```docker compose exec app bash```
 2. Laravelアプリの作成```composer create-project --prefer-dist laravel/laravel laravel-project "10.*"```
