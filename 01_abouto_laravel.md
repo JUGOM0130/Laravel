@@ -34,6 +34,7 @@
 
 1. Dickerコンテナに入る```docker compose exec app bash```
 2. Laravelアプリの作成```composer create-project --prefer-dist laravel/laravel laravel-project "10.*"```
+   1. ```--prefer-dist```:zipでDLする（こっちのが高速） ←→```--prefer-source```:git cloneでソースを落としてくる（デフォルトはこっち）
 3. storage dirの所有者をwww-dataに変更
 
    ```cmd
